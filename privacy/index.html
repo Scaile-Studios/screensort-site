@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · ScreenSort</title>
+  <meta name="description" content="ScreenSort processes every screenshot 100% on your Mac. It collects no personal data, no telemetry, no analytics and no crash reports.">
+  <link rel="canonical" href="{{SITE_URL}}/privacy/">
+  <!-- @partial head -->
+  <meta property="og:title" content="ScreenSort Privacy Policy">
+  <meta property="og:url" content="{{SITE_URL}}/privacy/">
+  <meta property="og:image" content="{{SITE_URL}}/img/mas-5-on-device-private.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="module" src="/src/legal.js"></script>
+</head>
+<body>
+  <!-- @partial nav -->
+  <div class="glow glow-sm" aria-hidden="true"></div>
+  <main id="main" class="doc">
+    <div class="wrap">
+<h1>ScreenSort Privacy Policy</h1>
+<p class="updated">Effective {{LEGAL_EFFECTIVE}}</p>
+<p class="intro">ScreenSort is a Mac app made by {{LEGAL_ENTITY}} ("Scaile Studios", "we", "us"). This policy explains what the ScreenSort app and the screensort.app website do with your information.</p>
+
+<div class="callout" data-color="green">
+  <p><strong>The short version:</strong> ScreenSort processes your screenshots 100% on your Mac. We collect no personal data. There is no telemetry, no analytics, no crash reporting and no advertising, and the app never sends your screenshots, their text or their filenames anywhere.</p>
+</div>
+
+<ul class="toc">
+  <li><a href="#on-device">On-device processing</a></li>
+  <li><a href="#no-collection">What we collect</a></li>
+  <li><a href="#network">Network</a></li>
+  <li><a href="#folders">Folder access</a></li>
+  <li><a href="#app-store">App Store label</a></li>
+  <li><a href="#website">Website</a></li>
+  <li><a href="#support">Support email</a></li>
+</ul>
+
+<h2 id="on-device">1. All processing happens on your Mac</h2>
+<p>When you take a screenshot, ScreenSort notices the new file in the folder you chose, reads the text in the image with Apple's Vision framework (OCR), and uses Apple's on-device Foundation Models framework (Apple Intelligence) to suggest a short filename and a category. It then renames the file and, if category folders are on (the default), moves it into the matching subfolder.</p>
+<p>Every one of these steps runs locally on your Mac. On Macs where Apple Intelligence is not available, ScreenSort names files from the Vision OCR text alone, also on-device. Your screenshots, the text read from them and the names ScreenSort generates are never uploaded to us, to Apple through ScreenSort, or to any third party.</p>
+
+<h2 id="no-collection">2. What we collect: nothing</h2>
+<ul>
+  <li><strong>No personal data.</strong> ScreenSort has no account, no sign-in and no license server. We do not know who uses the app.</li>
+  <li><strong>No telemetry or analytics.</strong> The app contains no analytics SDK and records no usage statistics.</li>
+  <li><strong>No crash reports.</strong> ScreenSort contains no third-party crash reporter. If you choose to share crash reports with developers in macOS settings, Apple handles them under Apple's own privacy policy, and we receive only what Apple provides to developers in aggregate.</li>
+  <li><strong>No advertising or tracking.</strong> No ad identifiers, no fingerprinting, no tracking of any kind.</li>
+</ul>
+<p>Your settings (screenshot folder, naming options, category folder names and routing) and the list of your 10 most recent renames are stored only on your Mac, in ScreenSort's own preferences. Uninstalling ScreenSort and deleting its preferences removes them.</p>
+
+<h2 id="network">3. Network requests</h2>
+<p>ScreenSort makes zero network requests with your content. It never sends your screenshots, the text read from them or their filenames anywhere. The app contains no networking, update, analytics or crash-reporting code at all, and the Mac App Store build does not even request the network permission. Naming does not need an internet connection, an API key or a cloud account, and works the same with Wi-Fi turned off.</p>
+<p>The Mac App Store version is updated by the App Store. For the version downloaded from screensort.app, you download new versions from this website yourself.</p>
+
+<h2 id="folders">4. Folder access, App Sandbox and security-scoped bookmarks</h2>
+<p>The Mac App Store version of ScreenSort runs inside the macOS App Sandbox, which means it can only reach folders you explicitly allow. When you click <strong>Grant Folder Access&hellip;</strong>, ScreenSort opens the standard macOS folder picker (<code>NSOpenPanel</code>) so you can confirm your screenshot folder. macOS then gives ScreenSort a security-scoped bookmark for exactly that folder, so access continues across app restarts without asking again.</p>
+<p>ScreenSort uses that access solely to watch for new screenshots and to rename them and file them into category subfolders inside that same folder, on your Mac. It only acts on new screenshots; other files in the folder are left alone, and it cannot access any other location on your Mac. You can choose a different folder or return to the system default at any time in ScreenSort's Settings.</p>
+<p>The version downloaded from screensort.app is signed with Apple's Developer ID and notarized by Apple. It follows the same rules: it only watches your screenshot folder (as set in macOS screenshot settings, or a folder you choose) and only renames and files new screenshots there.</p>
+
+<h2 id="app-store">5. Apple App Store privacy label</h2>
+<p>Because ScreenSort collects no data from the app, it qualifies for Apple's <strong>"Data Not Collected"</strong> App Store privacy nutrition label.</p>
+
+<h2 id="website">6. This website</h2>
+<p>screensort.app is a static website. It sets no tracking cookies and loads no third-party analytics, advertising or tracking scripts, fonts or embeds. The site is hosted on Cloudflare Pages and may also be served by Vercel. Like any web host, they process technical data such as your IP address, browser user agent and the pages or files requested, in order to deliver the site, keep it secure and prevent abuse, and they may keep this in standard server logs for a limited time under their own privacy policies. We do not use these logs to identify or profile visitors.</p>
+
+<h2 id="support">7. Support email</h2>
+<p>If you write to <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>, we receive your email address and whatever you choose to include, such as a description of the problem or a screenshot. We use it only to answer you and to fix the issue you report. We do not add you to a mailing list, sell your information or share it with anyone except our email provider, which stores the correspondence on our behalf. You can ask us to delete your messages at any time.</p>
+
+<h2>8. Children</h2>
+<p>ScreenSort does not collect personal data from anyone, including children under 13.</p>
+
+<h2>9. Your rights</h2>
+<p>Because we hold no personal data from the app, there is nothing for us to access, export or delete there. For support correspondence, you can ask us at any time what we hold and to delete it, wherever you live, including under the GDPR and California law.</p>
+
+<h2>10. Changes to this policy</h2>
+<p>If we change this policy, we will update the effective date above and publish the new version on this page. If a future version of ScreenSort ever needed to collect data, we would say so here before that version ships, and update the App Store privacy label.</p>
+
+<h2>11. Contact</h2>
+<p>{{LEGAL_ENTITY}}<br>Email: <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a></p>
+    </div>
+  </main>
+  <!-- @partial footer -->
+</body>
+</html>

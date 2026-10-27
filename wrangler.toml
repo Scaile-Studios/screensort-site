@@ -1,0 +1,5 @@
+# Cloudflare Pages project config. Static site only: no Functions, bindings or secrets.
+# Build command `npm run build`, output directory `dist`.
+name = "screensort-site"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-01"

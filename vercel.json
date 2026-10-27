@@ -1,0 +1,33 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/download/ScreenSort.dmg", "destination": "/download/ScreenSort-1.0.dmg", "statusCode": 302 },
+    { "source": "/download/ScreenSort-preview.dmg", "destination": "/download/ScreenSort-1.0.dmg", "statusCode": 302 }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/download/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "application/x-apple-diskimage" },
+        { "key": "Content-Disposition", "value": "attachment" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains" }
+      ]
+    }
+  ]
+}

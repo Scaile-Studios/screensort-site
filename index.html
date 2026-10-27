@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScreenSort: Screenshots, named and sorted automatically</title>
+  <meta name="description" content="ScreenSort for Mac reads every screenshot on-device with Apple Intelligence and Vision OCR, gives it a clean searchable filename in under a second, and files it into the right folder. No cloud, no API keys, no telemetry.">
+  <link rel="canonical" href="{{SITE_URL}}/">
+  <!-- @partial head -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ScreenSort">
+  <meta property="og:title" content="ScreenSort: Screenshots, named and sorted automatically">
+  <meta property="og:description" content="Press Cmd-Shift-4. ScreenSort names your capture on-device in under a second and files it into the right folder.">
+  <meta property="og:url" content="{{SITE_URL}}/">
+  <meta property="og:image" content="{{SITE_URL}}/img/mas-1-hero-instant-rename.png">
+  <meta property="og:image:width" content="2880">
+  <meta property="og:image:height" content="1800">
+  <meta property="og:image:alt" content="A ScreenSort banner renaming a screenshot to stripe-q3-invoice.png and filing it in Receipts and Invoices.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ScreenSort: Screenshots, named and sorted automatically">
+  <meta name="twitter:description" content="On-device screenshot naming and sorting for Mac. Apple Intelligence and Vision OCR, zero cloud uploads.">
+  <meta name="twitter:image" content="{{SITE_URL}}/img/mas-1-hero-instant-rename.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ScreenSort","operatingSystem":"macOS 26","applicationCategory":"UtilitiesApplication","softwareVersion":"{{VERSION}}","url":"{{SITE_URL}}/","downloadUrl":"{{SITE_URL}}{{DOWNLOAD_URL}}","publisher":{"@type":"Organization","name":"{{LEGAL_ENTITY}}","email":"{{SUPPORT_EMAIL}}"}}</script>
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body class="home">
+  <!-- @partial nav-home -->
+  <div class="glow" aria-hidden="true"></div>
+
+  <main id="main">
+    <header class="hero">
+      <div class="wrap hero-in">
+        <p class="hero-badge"><img src="/img/screensort-icon-128.png" width="26" height="26" alt="">ScreenSort {{VERSION}} for Mac<span>100% on-device</span></p>
+        <h1>Screenshots, named and sorted <span class="grad">automatically.</span></h1>
+        <p class="sub">Press <kbd>Cmd-Shift-4</kbd>. ScreenSort reads your capture on-device with Apple Intelligence and Vision OCR, gives it a clean searchable filename in under a second, and files it into the right folder.</p>
+        <div class="ctas">
+          <a class="btn pri lg" href="{{DOWNLOAD_URL}}">
+            <svg class="btn-apple" viewBox="0 0 14 17" aria-hidden="true"><path d="M11.6 9c0-2 1.7-3 1.8-3a3.9 3.9 0 00-3-1.7c-1.3-.1-2.5.8-3.2.8s-1.7-.7-2.8-.7A4.1 4.1 0 001 6.6c-1.5 2.6-.4 6.4 1 8.5.7 1 1.5 2.1 2.6 2.1s1.4-.7 2.7-.7 1.6.7 2.7.7 1.8-1 2.5-2a8 8 0 001.1-2.3A3.6 3.6 0 0111.6 9zM9.5 2.9A3.6 3.6 0 0010.3.3a3.7 3.7 0 00-2.4 1.2 3.4 3.4 0 00-.9 2.5 3 3 0 002.5-1.1z" fill="currentColor"/></svg>
+            <span class="btn-stack"><span>Download for macOS</span><small>{{DOWNLOAD_BADGE}}</small></span>
+          </a>
+          <a class="btn sec lg" href="#mac-app-store">
+            <svg class="btn-apple" viewBox="0 0 14 17" aria-hidden="true"><path d="M11.6 9c0-2 1.7-3 1.8-3a3.9 3.9 0 00-3-1.7c-1.3-.1-2.5.8-3.2.8s-1.7-.7-2.8-.7A4.1 4.1 0 001 6.6c-1.5 2.6-.4 6.4 1 8.5.7 1 1.5 2.1 2.6 2.1s1.4-.7 2.7-.7 1.6.7 2.7.7 1.8-1 2.5-2a8 8 0 001.1-2.3A3.6 3.6 0 0111.6 9zM9.5 2.9A3.6 3.6 0 0010.3.3a3.7 3.7 0 00-2.4 1.2 3.4 3.4 0 00-.9 2.5 3 3 0 002.5-1.1z" fill="currentColor"/></svg>
+            <span class="btn-stack"><span>Mac App Store</span><small>{{MAS_STATUS}}</small></span>
+          </a>
+        </div>
+        <p class="req">Notarized by Apple. No account, no API key, no subscription to start.</p>
+      </div>
+
+      <figure class="demo wrap-wide" id="demo" data-demo>
+        <!-- @partial demo -->
+        <figcaption class="hint">Live demo. Click the filename to rename it, the folder badge to move it, or drag the thumbnail into an app.</figcaption>
+      </figure>
+    </header>
+
+    <section id="gallery" class="section" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Tour</p>
+          <h2 id="gallery-title">See it on a real Mac.</h2>
+          <p class="lede">Five Retina screenshots straight from ScreenSort {{VERSION}}.</p>
+        </div>
+        <!-- @partial gallery -->
+      </div>
+    </section>
+
+    <div id="features">
+      <section class="section feature" id="naming" aria-labelledby="naming-title" data-color="coral">
+        <div class="wrap feature-in">
+          <div class="feature-copy">
+            <p class="eyebrow">01 &middot; Instant On-Device Naming</p>
+            <h2 id="naming-title">From <code>Screenshot 2026-10-27&hellip;</code> to a name you can find.</h2>
+            <p>ScreenSort watches your screenshot folder. The moment a capture lands, it reads the pixels with Vision OCR, asks the on-device Apple Intelligence model what the capture is about, and renames the file in under a second.</p>
+            <ul class="ticks">
+              <li><b>2 to 5 word lowercase slugs.</b> Short, readable, and great in Spotlight and Finder search.</li>
+              <li><b>Optional date suffix.</b> Add <code>-YYYY-MM-DD</code> to every name, or switch it off in Settings.</li>
+              <li><b>Collision protection.</b> A second <code>stripe-q3-invoice.png</code> becomes <code>stripe-q3-invoice-2.png</code>. Nothing is ever overwritten.</li>
+              <li><b>Named once, never twice.</b> ScreenSort tags each file it handles with an extended attribute, so a file you move later is never renamed again.</li>
+              <li><b>Works without Apple Intelligence.</b> On Macs without it, names come from on-device Vision OCR alone.</li>
+            </ul>
+          </div>
+          <div class="feature-art card glass" aria-label="Rename example">
+            <div class="rename-demo">
+              <div class="rd-row rd-before"><span class="rd-label">Before</span><code>Screenshot 2026-10-27 at 2.14.09 PM.png</code></div>
+              <div class="rd-arrow" aria-hidden="true"><span>Vision OCR</span><i></i><span>Apple Intelligence</span><b>&lt; 1 s</b></div>
+              <div class="rd-row rd-after"><span class="rd-label">After</span><code>stripe-q3-invoice.png</code></div>
+              <div class="rd-variants">
+                <div><span>With date suffix</span><code>stripe-q3-invoice-2026-10-27.png</code></div>
+                <div><span>Second capture</span><code>stripe-q3-invoice-2.png</code></div>
+                <div><span>Extended attribute</span><code>com.scailestudios.screenshotnamer.handled</code></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section feature flip" id="drag" aria-labelledby="drag-title" data-color="blue">
+        <div class="wrap feature-in">
+          <div class="feature-copy">
+            <p class="eyebrow">02 &middot; Drag Straight from the Banner</p>
+            <h2 id="drag-title">Share it before you even open Finder.</h2>
+            <p>The floating banner at the top center of your screen is a real drag source. Grab the thumbnail and drop the renamed file into Slack, Mail, Messages, Linear, Cursor, Chrome or Finder.</p>
+            <ul class="ticks">
+              <li><b>Built on <code>NSDraggingSource</code>.</b> The file you drop is the renamed PNG on disk, not a copy of pixels.</li>
+              <li><b>No focus stealing.</b> The panel uses <code>acceptsFirstMouse</code>, so the first click starts a drag and the app you are working in stays in front.</li>
+              <li><b>Timer pauses while you drag.</b> The 5 second auto-dismiss stops (<code>PauseReason.dragging</code>) until you let go.</li>
+              <li><b>Also from the menu bar.</b> Every row in <code>Recent Renames</code> is draggable too.</li>
+            </ul>
+          </div>
+          <div class="feature-art card glass">
+            <div class="drag-art" aria-hidden="true">
+              <div class="da-banner"><span class="da-thumb"></span><span class="da-name">swift-actor-deadlock-trace.png</span><span class="da-pause">Timer paused &middot; dragging</span></div>
+              <svg class="da-path" viewBox="0 0 300 120" preserveAspectRatio="none"><path d="M60 0 C 60 70, 220 40, 230 118" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 6"/></svg>
+              <div class="da-apps">
+                <span>Slack</span><span>Mail</span><span>Messages</span><span>Linear</span><span>Cursor</span><span>Chrome</span><span>Finder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section feature stacked" id="folders" aria-labelledby="folders-title" data-color="gold">
+        <div class="wrap">
+          <div class="feature-copy center">
+            <p class="eyebrow">03 &middot; Smart Category Folders</p>
+            <h2 id="folders-title">Every capture lands where it belongs.</h2>
+            <p>ScreenSort files each screenshot into one of six category subfolders inside your screenshot folder, created the first time they are needed. Rename any folder or add your own keywords in Settings. Routing is optional: switch it off and ScreenSort only renames, leaving files where macOS saved them.</p>
+            <label class="toggle" data-routing>
+              <input type="checkbox" checked data-routing-input>
+              <span class="switch" aria-hidden="true"></span>
+              <span>Route into category subfolders</span>
+            </label>
+            <p class="routing-note" data-routing-note>On: each capture moves into the subfolder that matches its content.</p>
+          </div>
+          <!-- @partial folders -->
+        </div>
+      </section>
+
+      <section class="section feature" id="menubar" aria-labelledby="menubar-title" data-color="green">
+        <div class="wrap feature-in">
+          <div class="feature-copy">
+            <p class="eyebrow">04 &middot; Menu Bar Control</p>
+            <h2 id="menubar-title">Your last 10 captures, one click away.</h2>
+            <p>ScreenSort lives quietly in the menu bar, with no Dock icon. Open it to see <code>Recent Renames</code> and fix anything in a second, from there or from the banner.</p>
+            <ul class="ticks">
+              <li><b>Inline filename editing.</b> Click a name, type, press Return. Esc cancels.</li>
+              <li><b>Quick Look on click.</b> Click a thumbnail to preview the capture without opening another app.</li>
+              <li><b>Move menu and Show in Finder.</b> Send a file to another category folder, a new folder, or reveal it in Finder.</li>
+              <li><b>One-click Undo.</b> Restores both the original filename and the original location. <kbd>Cmd-Z</kbd> undoes the last rename.</li>
+              <li><b>Launch at login.</b> Registered with <code>SMAppService</code>. Pause Watching any time.</li>
+            </ul>
+          </div>
+          <div class="feature-art">
+            <div class="popover glass" aria-label="Recent Renames menu example">
+              <div class="pop-head"><img src="/img/screensort-icon-128.png" width="20" height="20" alt="" loading="lazy"><b>ScreenSort</b><span><i class="live-dot"></i>Watching ~/Desktop/Screenshots</span></div>
+              <p class="pop-sec">Recent Renames</p>
+              <ol class="pop-list">
+                <li data-color="gold" class="editing"><span class="pt"></span><span class="pn pn-edit">onboarding-card-spacing<i></i></span><span class="pf">UI &amp; Design</span></li>
+                <li data-color="coral" class="hl"><span class="pt"></span><span class="pn">stripe-q3-invoice.png</span><span class="pf">Receipts &amp; Invoices</span><span class="pa"><span>Quick Look</span><span class="pop-undo">Undo</span></span></li>
+                <li data-color="blue"><span class="pt"></span><span class="pn">swift-actor-deadlock-trace.png</span><span class="pf">Code &amp; Terminal</span></li>
+                <li data-color="green"><span class="pt"></span><span class="pn">john-adams-project-notes.png</span><span class="pf">Chats &amp; Docs</span></li>
+              </ol>
+              <div class="pop-foot"><span>Pause Watching</span><span>Settings&hellip;</span><span>Quit</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section feature stacked" id="privacy" aria-labelledby="privacy-title" data-color="green">
+        <div class="wrap">
+          <div class="feature-copy center">
+            <p class="eyebrow">05 &middot; 100% On-Device Privacy</p>
+            <h2 id="privacy-title">Your screenshots never leave your Mac.</h2>
+            <p>Screenshots hold invoices, passwords, private chats and unreleased work. ScreenSort reads them with Apple's Foundation Models framework and Vision OCR, both running locally on your Mac. There is no server to send anything to.</p>
+          </div>
+          <div class="zeros">
+            <div><b>0</b><span>cloud uploads</span></div>
+            <div><b>0</b><span>API keys</span></div>
+            <div><b>$0</b><span>per screenshot</span></div>
+            <div><b>0</b><span>telemetry</span></div>
+          </div>
+          <div class="arch card glass" aria-label="How ScreenSort processes a screenshot">
+            <p class="arch-label">Everything below runs on your Mac</p>
+            <ol class="arch-flow">
+              <li><b>FSEventStream</b><span>Watches your screenshot folder for new captures.</span></li>
+              <li><b>Vision OCR</b><span>Reads the text in the image, on-device.</span></li>
+              <li><b>Foundation Models</b><span>Apple Intelligence turns that into a short name and a category.</span></li>
+              <li><b>Rename &amp; file</b><span>Renames the file and moves it into the right subfolder, through a security-scoped bookmark.</span></li>
+            </ol>
+            <ul class="arch-notes">
+              <li>App Sandbox safe: the Mac App Store build only touches the folder you grant in the macOS folder picker.</li>
+              <li>No network requests with your images or filenames. No account, no analytics.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section id="mac-app-store" class="section get" aria-labelledby="get-title">
+      <div class="wrap">
+        <div class="get-card card glass">
+          <img src="/img/screensort-icon-squircle.png" width="128" height="128" alt="ScreenSort app icon" loading="lazy">
+          <h2 id="get-title">Get ScreenSort</h2>
+          <p class="lede">Download the notarized app from screensort.app today. The Mac App Store version is {{MAS_STATUS}} with the same on-device engine and the same privacy promise.</p>
+          <div class="ctas">
+            <a class="btn pri lg" href="{{DOWNLOAD_URL}}">
+              <svg class="btn-apple" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8.5M4.5 7.5L8 11l3.5-3.5M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="btn-stack"><span>Download for macOS</span><small>{{DOWNLOAD_BADGE}}</small></span>
+            </a>
+            <span class="btn sec lg is-static" aria-disabled="true">
+              <svg class="btn-apple" viewBox="0 0 14 17" aria-hidden="true"><path d="M11.6 9c0-2 1.7-3 1.8-3a3.9 3.9 0 00-3-1.7c-1.3-.1-2.5.8-3.2.8s-1.7-.7-2.8-.7A4.1 4.1 0 001 6.6c-1.5 2.6-.4 6.4 1 8.5.7 1 1.5 2.1 2.6 2.1s1.4-.7 2.7-.7 1.6.7 2.7.7 1.8-1 2.5-2a8 8 0 001.1-2.3A3.6 3.6 0 0111.6 9zM9.5 2.9A3.6 3.6 0 0010.3.3a3.7 3.7 0 00-2.4 1.2 3.4 3.4 0 00-.9 2.5 3 3 0 002.5-1.1z" fill="currentColor"/></svg>
+              <span class="btn-stack"><span>Mac App Store</span><small>{{MAS_STATUS}}</small></span>
+            </span>
+          </div>
+          <p class="req">Built for {{REQUIREMENTS}} with Apple Intelligence. Also runs on macOS 15 or later with Vision OCR naming. Universal app for Apple Silicon and Intel. <a href="/support/#requirements">Full requirements</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- @partial footer -->
+</body>
+</html>

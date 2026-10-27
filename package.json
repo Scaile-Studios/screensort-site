@@ -1,0 +1,19 @@
+{
+  "name": "screensort-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Marketing site for screensort.app",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run check:dashes && vite build",
+    "preview": "vite preview --port 4174 --strictPort",
+    "check:dashes": "node scripts/check-dashes.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "vite": "8.3.5"
+  }
+}

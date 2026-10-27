@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support · ScreenSort</title>
+  <meta name="description" content="ScreenSort support: contact, quick start guide, folder access and security-scoped bookmarks, FAQ and system requirements.">
+  <link rel="canonical" href="{{SITE_URL}}/support/">
+  <!-- @partial head -->
+  <meta property="og:title" content="ScreenSort Support">
+  <meta property="og:url" content="{{SITE_URL}}/support/">
+  <meta property="og:image" content="{{SITE_URL}}/img/mas-4-menubar-edit-undo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="module" src="/src/legal.js"></script>
+</head>
+<body>
+  <!-- @partial nav -->
+  <div class="glow glow-sm" aria-hidden="true"></div>
+  <main id="main" class="doc">
+    <div class="wrap">
+<h1>ScreenSort Support</h1>
+<p class="updated">Help for ScreenSort {{VERSION}} for Mac</p>
+
+<ul class="toc">
+  <li><a href="#quick-start">Quick Start</a></li>
+  <li><a href="#folder-access">Folder Access</a></li>
+  <li><a href="#faq">FAQ</a></li>
+  <li><a href="#requirements">System Requirements</a></li>
+</ul>
+
+<section class="contact-card card glass" aria-labelledby="contact-title">
+  <span class="ci"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 5.5l7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+  <div>
+    <h2 id="contact-title">Contact us</h2>
+    <p>Email <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>. A real person at {{LEGAL_ENTITY}} replies {{SUPPORT_RESPONSE}}. Include your macOS version and what you expected to happen.</p>
+  </div>
+  <a class="btn pri" href="mailto:{{SUPPORT_EMAIL}}?subject=ScreenSort%20support">Email Support</a>
+</section>
+
+<h2 id="quick-start">Quick Start Guide</h2>
+<ol class="steps">
+  <li><b>Install and launch ScreenSort.</b> Open the disk image, drag ScreenSort to Applications and open it (or install it from the Mac App Store). ScreenSort lives in the menu bar, near the clock, and has no Dock icon. On first launch it opens its Settings window.</li>
+  <li><b>Grant folder access once.</b> Under <strong>Screenshot Folder</strong>, click <strong>Grant Folder Access&hellip;</strong> and the macOS folder picker opens on the folder where your screenshots are saved. Click <strong>Grant Access</strong>. You only do this once.</li>
+  <li><b>Take a screenshot.</b> Press <kbd>Cmd-Shift-4</kbd> (selection) or <kbd>Cmd-Shift-3</kbd> (full screen). A banner appears at the top center of your screen, the file gets a clean name in under a second, and it is filed into the right folder. Click the name to edit it, drag the thumbnail into any app, or click Undo.</li>
+</ol>
+
+<h2 id="folder-access">Folder Access &amp; Security-Scoped Bookmarks</h2>
+<h3>How ScreenSort finds your screenshot folder</h3>
+<p>macOS saves screenshots to the Desktop (<code>~/Desktop</code>) unless you picked another location in the Screenshot app (<kbd>Cmd-Shift-5</kbd>, then Options).</p>
+<ul>
+  <li><strong>Download from screensort.app:</strong> ScreenSort reads that location from the <code>com.apple.screencapture</code> settings, falls back to <code>~/Desktop</code> if none is set, and follows along automatically if you change it later.</li>
+  <li><strong>Mac App Store:</strong> the App Sandbox does not allow reading other apps' settings, so ScreenSort starts with your Desktop. If you save screenshots somewhere else, click <strong>Choose Custom Folder&hellip;</strong> and pick that folder.</li>
+</ul>
+<p>To check your screenshot location yourself, run this in Terminal. If it prints an error, macOS is using the default, your Desktop.</p>
+<p><code>defaults read com.apple.screencapture location</code></p>
+
+<h3>Why the one-time folder picker</h3>
+<p>The Mac App Store version runs in the macOS App Sandbox, so it cannot touch any folder you have not explicitly granted. When you confirm a folder in the macOS folder picker (<code>NSOpenPanel</code>), macOS gives ScreenSort a <strong>security-scoped bookmark</strong>: a permission token for that folder only. ScreenSort stores the bookmark with its settings, which keeps read and write access working across app restarts and Mac restarts without asking again. ScreenSort cannot see anything outside the folder you grant.</p>
+
+<h3>Changing the screenshot folder or the category folders</h3>
+<p>Click the ScreenSort icon in the menu bar and choose <strong>Settings&hellip;</strong> (<kbd>Cmd-,</kbd>).</p>
+<ul>
+  <li><strong>Screenshot Folder:</strong> click <strong>Choose Custom Folder&hellip;</strong> to watch a different folder, or <strong>Use System Default</strong> to go back to where macOS saves screenshots. <strong>Show in Finder</strong> opens the folder being watched.</li>
+  <li><strong>Folder Routing:</strong> the category folders are created as subfolders inside the screenshot folder, the first time a capture is filed into them. Rename any of them, add extra keywords, or click <strong>Restore Default Folders</strong>.</li>
+</ul>
+<p>If ScreenSort ever loses access, for example because the folder was renamed or moved, the menu bar menu shows <strong>Needs access to the screenshot folder</strong>. Choose <strong>Grant Folder Access&hellip;</strong> to pick it again.</p>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq">
+  <details>
+    <summary>How does on-device naming work?</summary>
+    <div>
+      <p>When a new screenshot appears, ScreenSort reads the text in it with Apple's Vision OCR, then asks Apple's on-device Foundation Models framework (Apple Intelligence) to describe the capture in 2 to 5 words. That becomes a lowercase, hyphenated filename like <code>stripe-q3-invoice.png</code>, and the same step picks a category folder.</p>
+      <p>Everything runs on your Mac in under a second. Nothing is uploaded. On Macs without Apple Intelligence (or with it turned off), ScreenSort builds the name from the OCR text alone.</p>
+    </div>
+  </details>
+  <details>
+    <summary>Do I need an API key or a cloud account?</summary>
+    <div><p>No. ScreenSort has no account, no API key, no per-screenshot cost and no server. It works with Wi-Fi turned off.</p></div>
+  </details>
+  <details>
+    <summary>How do I drag a screenshot into Slack or Mail?</summary>
+    <div>
+      <p>While the banner is showing, press on the thumbnail and drag it into Slack, Mail, Messages, Linear, Cursor, Chrome, Finder or any app that accepts files. The banner does not steal focus, so your current app stays in front, and the 5 second auto-dismiss timer pauses while you drag.</p>
+      <p>Missed the banner? Click the ScreenSort menu bar icon and drag the file from <strong>Recent Renames</strong>.</p>
+    </div>
+  </details>
+  <details>
+    <summary>How do I edit a name or undo a rename?</summary>
+    <div>
+      <p><strong>Edit:</strong> click the filename in the banner or in Recent Renames, type the new name and press Return. Press Esc to cancel.</p>
+      <p><strong>Undo:</strong> click <strong>Undo</strong> in the banner, use Undo on a file in Recent Renames, or choose <strong>Undo Last Rename</strong> (<kbd>Cmd-Z</kbd>) from the menu bar menu. ScreenSort restores both the original filename and the original location.</p>
+    </div>
+  </details>
+  <details>
+    <summary>What happens if I take multiple screenshots at once?</summary>
+    <div><p>Every capture is named and filed on its own. Instead of stacking banners, the banner collects the captures that arrive while it is showing and labels them "N of M", with arrows to step through up to 10. Every capture also appears in Recent Renames. If two captures get the same name, the second gets a number, like <code>stripe-q3-invoice-2.png</code>. Nothing is ever overwritten.</p></div>
+  </details>
+  <details>
+    <summary>Does ScreenSort rename files I drag into the folder manually?</summary>
+    <div><p>Generally no. ScreenSort only renames new screenshots: files that macOS marks as screen captures or that carry a screenshot name such as "Screenshot&hellip;", and only within two minutes of being created. Older files and everything else you drag into the folder are left alone. ScreenSort also marks every file it has handled with an extended attribute, so a screenshot is never renamed twice, even if you move it somewhere else and back.</p></div>
+  </details>
+  <details>
+    <summary>Can I turn off the category folders?</summary>
+    <div><p>Yes. In Settings, under Folder Routing, turn off <strong>Route into category subfolders</strong>. ScreenSort will still rename each capture, but leave it where macOS saved it. You can also turn off the date suffix under Naming.</p></div>
+  </details>
+  <details>
+    <summary>How do I start ScreenSort automatically?</summary>
+    <div><p>In Settings, under General, turn on <strong>Launch at login</strong>. ScreenSort registers itself with macOS (<code>SMAppService</code>), and you can also manage it in System Settings, General, Login Items.</p></div>
+  </details>
+  <details>
+    <summary>How do I uninstall ScreenSort?</summary>
+    <div><p>Choose <strong>Quit ScreenSort</strong> from the menu bar menu, then drag ScreenSort from Applications to the Trash. Your screenshots stay exactly where they are, with their new names.</p></div>
+  </details>
+  <details>
+    <summary>How do I pause ScreenSort for a while?</summary>
+    <div><p>Choose <strong>Pause Watching</strong> from the menu bar menu. New screenshots keep their macOS names until you choose <strong>Resume Watching</strong>.</p></div>
+  </details>
+</div>
+
+<h2 id="requirements">System Requirements</h2>
+<table>
+  <thead><tr><th>Item</th><th>Requirement</th></tr></thead>
+  <tbody>
+    <tr><td>macOS</td><td>macOS 26 or later for Apple Intelligence naming. macOS 15 or later is supported, with names from on-device Vision OCR.</td></tr>
+    <tr><td>Mac</td><td>Universal app: Apple Silicon and Intel Macs.</td></tr>
+    <tr><td>Apple Intelligence</td><td>Recommended. On a Mac that supports it, with Apple Intelligence turned on, ScreenSort uses the on-device Foundation Models for the most accurate names and categories. Settings shows which engine is in use. Turn it off with <strong>Use Apple Intelligence when available</strong>.</td></tr>
+    <tr><td>Internet</td><td>Not required. ScreenSort works fully offline.</td></tr>
+  </tbody>
+</table>
+
+<div class="callout" data-color="blue">
+  <p>Still stuck? Email <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a> and we will help. See also our <a href="/privacy/">Privacy Policy</a> and <a href="/terms/">Terms of Use</a>.</p>
+</div>
+    </div>
+  </main>
+  <!-- @partial footer -->
+</body>
+</html>
