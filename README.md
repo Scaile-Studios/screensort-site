@@ -24,7 +24,7 @@ npm run check:dashes
 ## Where things live
 
 - `index.html`, `privacy/`, `terms/`, `support/`: the pages, registered in `vite.config.js`. `<!-- @partial name -->` and `{{KEY}}` are expanded at build time by the small plugin in `vite.config.js`, so shipped HTML is complete without JS. Internal links and assets are page-relative (`base: './'` plus a per-page `{{ROOT}}` of `./` or `../`), so `dist/` works at `/` (screensort.app) and under a subpath (`/screensort-site/` on GitHub Pages).
-- `src/site.config.js`: values that change between releases (download URL and badge, Mac App Store link and status, requirements, support email, legal entity and effective date). Change them there only.
+- `src/site.config.js`: values that change between releases (download URL and badge, Mac App Store link and status, requirements, support email (rendered obfuscated via the email partials), legal entity and effective date). Change them there only.
 - `src/partials.js`: shared markup (head tags, nav, footer, the hero demo first frame, the gallery, the smart folders grid) and the SVG icons.
 - `src/samples.js`: the four sample captures and six category folders used by the hero demo, shared by the build and the client.
 - `src/demo.js`: the live banner demo (capture animation, filename morph, inline rename, folder menu, drag and drop, Quick Look, Undo, auto-dismiss timer, Recent Renames).

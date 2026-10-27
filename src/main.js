@@ -1,4 +1,5 @@
 import './styles/main.css';
+import './email.js';
 import { initDemo } from './demo.js';
 import { initGallery } from './gallery.js';
 

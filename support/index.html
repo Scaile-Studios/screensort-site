@@ -28,13 +28,13 @@
   <li><a href="#requirements">System Requirements</a></li>
 </ul>
 
-<section class="contact-card card glass" aria-labelledby="contact-title">
+<section class="contact-card card glass" id="contact" aria-labelledby="contact-title">
   <span class="ci"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 5.5l7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
   <div>
     <h2 id="contact-title">Contact us</h2>
-    <p>Email <a href="mailto:{{APP_SUPPORT_EMAIL}}">{{APP_SUPPORT_EMAIL}}</a> (or <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a>). A real person at {{LEGAL_ENTITY}} replies {{SUPPORT_RESPONSE}}. Include your macOS version and what you expected to happen.</p>
+    <p>Email <!-- @partial email -->. A real person at {{LEGAL_ENTITY}} replies {{SUPPORT_RESPONSE}}. Include your macOS version and what you expected to happen.</p>
   </div>
-  <a class="btn pri" href="mailto:{{APP_SUPPORT_EMAIL}}?subject=ScreenSort%20support">Email Support</a>
+  <!-- @partial email-button -->
 </section>
 
 <h2 id="quick-start">Quick Start Guide</h2>
@@ -130,7 +130,7 @@
 </table>
 
 <div class="callout" data-color="blue">
-  <p>Still stuck? Email <a href="mailto:{{APP_SUPPORT_EMAIL}}">{{APP_SUPPORT_EMAIL}}</a> or <a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a> and we will help. See also our <a href="{{ROOT}}privacy/">Privacy Policy</a> and <a href="{{ROOT}}terms/">Terms of Use</a>.</p>
+  <p>Still stuck? Email <!-- @partial email --> and we will help. See also our <a href="{{ROOT}}privacy/">Privacy Policy</a> and <a href="{{ROOT}}terms/">Terms of Use</a>.</p>
 </div>
     </div>
   </main>

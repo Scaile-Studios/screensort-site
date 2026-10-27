@@ -47,6 +47,17 @@ function nav(home, root) {
 </div></nav>`;
 }
 
+// The support address ships as base64 user and domain parts, never as plain text
+// or a mailto: link, so it is absent from the static HTML. src/email.js fills in
+// the address and href at runtime; data-keep-label keeps a custom label such as a
+// button's. Without JS the link falls back to the support page's contact card.
+const b64 = (s) => Buffer.from(s).toString('base64');
+const [EMAIL_USER, EMAIL_DOMAIN] = SITE.SUPPORT_EMAIL.split('@');
+
+function email(root, { label = 'Contact Support', cls = '', subject = '', keepLabel = false } = {}) {
+  return `<a class="js-obfuscated-email${cls ? ` ${cls}` : ''}" data-u="${b64(EMAIL_USER)}" data-d="${b64(EMAIL_DOMAIN)}"${subject ? ` data-subject="${esc(subject)}"` : ''}${keepLabel ? ' data-keep-label' : ''} href="${root}support/#contact">${label}</a>`;
+}
+
 const footer = (root) => `<footer class="footer"><div class="wrap footer-in">
   <div class="footer-brand">
     <a class="brand" href="${root}" aria-label="ScreenSort home"><img src="${root}img/screensort-icon-128.png" width="34" height="34" alt="" loading="lazy">ScreenSort</a>
@@ -57,7 +68,7 @@ const footer = (root) => `<footer class="footer"><div class="wrap footer-in">
     <h2>Product</h2><a href="${root}#features">Features</a><a href="${root}#gallery">Screenshots</a><a href="${root}${SITE.DOWNLOAD_URL}">Download</a><a href="${root}#mac-app-store">Mac App Store</a>
   </nav>
   <nav class="footer-links" aria-label="Help and legal">
-    <h2>Help</h2><a href="${root}support/">Support</a><a href="${root}privacy/">Privacy Policy</a><a href="${root}terms/">Terms of Use</a><a href="mailto:${SITE.APP_SUPPORT_EMAIL}">${SITE.APP_SUPPORT_EMAIL}</a><a href="mailto:${SITE.SUPPORT_EMAIL}">${SITE.SUPPORT_EMAIL}</a>
+    <h2>Help</h2><a href="${root}support/">Support</a><a href="${root}privacy/">Privacy Policy</a><a href="${root}terms/">Terms of Use</a>${email(root)}
   </nav>
 </div></footer>`;
 
@@ -209,20 +220,25 @@ export const PARTIALS = {
   demo,
   gallery,
   folders,
+  email: (root) => email(root),
+  'email-button': (root) => email(root, { label: 'Email Support', cls: 'btn pri', subject: 'ScreenSort support', keepLabel: true }),
 };
 
 // Expands partials first (they may contain {{KEY}}), then config keys.
 // root is the page-relative path to the site root ('./' or '../'), exposed as
 // {{ROOT}}, so every internal link works under a subpath like /screensort-site/.
 export function renderHtml(html, root = './') {
-  return html
+  const out = html
     .replace(/<!--\s*@partial\s+([\w-]+)\s*-->/g, (m, name) => {
       if (!PARTIALS[name]) throw new Error(`Unknown partial: ${name}`);
       return PARTIALS[name](root);
     })
     .replace(/\{\{\s*(\w+)\s*\}\}/g, (m, key) => {
       if (key === 'ROOT') return root;
+      if (key === 'SUPPORT_EMAIL') throw new Error('Use <!-- @partial email --> instead of {{SUPPORT_EMAIL}}');
       if (!(key in SITE)) throw new Error(`Unknown site config key: ${key}`);
       return String(SITE[key]);
     });
+  if (/mailto:|@screensort|@scailestudios/i.test(out)) throw new Error('Plain email address or mailto: link in page HTML');
+  return out;
 }
