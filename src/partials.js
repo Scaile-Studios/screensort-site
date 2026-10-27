@@ -65,7 +65,7 @@ const footer = (root) => `<footer class="footer"><div class="wrap footer-in">
     <p class="footer-fine">&copy; ${SITE.YEAR} ${SITE.LEGAL_ENTITY}. Mac, macOS, Apple Intelligence and Mac App Store are trademarks of Apple Inc.</p>
   </div>
   <nav class="footer-links" aria-label="Product">
-    <h2>Product</h2><a href="${root}#features">Features</a><a href="${root}#gallery">Screenshots</a><a href="${root}${SITE.DOWNLOAD_URL}">Download</a><a href="${root}#mac-app-store">Mac App Store</a>
+    <h2>Product</h2><a href="${root}#features">Features</a><a href="${root}#gallery">Screenshots</a><a href="${root}${SITE.DOWNLOAD_URL}">Download</a><a href="${SITE.MAS_URL}">Mac App Store</a>
   </nav>
   <nav class="footer-links" aria-label="Help and legal">
     <h2>Help</h2><a href="${root}support/">Support</a><a href="${root}privacy/">Privacy Policy</a><a href="${root}terms/">Terms of Use</a>${email(root)}

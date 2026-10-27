@@ -10,10 +10,9 @@ export const SITE = {
   VERSION: '1.0',
   DOWNLOAD_BADGE: 'v1.0 - macOS 26+ - Apple Silicon &amp; Intel',
 
-  // Mac App Store listing. Until the listing is live, the button scrolls to the
-  // #mac-app-store section on the home page (prefix with {{ROOT}}). Replace with the apps.apple.com URL at launch.
-  MAS_URL: '#mac-app-store',
-  MAS_STATUS: 'Coming soon',
+  // Mac App Store listing. An absolute URL, so pages use it as is (no {{ROOT}} prefix).
+  MAS_URL: 'https://apps.apple.com/us/app/screensort-auto-screenshot/id6827754596?mt=12',
+  MAS_STATUS: 'macOS 15+ - Sandboxed',
 
   REQUIREMENTS: 'macOS 26 or later',
 

@@ -52,4 +52,4 @@ Vercel: `vercel.json` sets the build command and output directory and mirrors th
 
 ## Mac App Store launch
 
-Set `MAS_URL` in `src/site.config.js` to the apps.apple.com listing and `MAS_STATUS` to the badge text (for example `Download on the`). The hero button links to `#mac-app-store` until then.
+`MAS_URL` in `src/site.config.js` is the apps.apple.com listing and `MAS_STATUS` is the badge text under the Mac App Store buttons. `MAS_URL` is absolute, so pages use `{{MAS_URL}}` (or `SITE.MAS_URL` in `src/partials.js`) without a `{{ROOT}}` prefix.
