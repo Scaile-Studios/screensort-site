@@ -621,7 +621,8 @@ html:not(.js) .toggle, html:not(.js) .routing-note { display: none; }
 .doc h2 { font-size: 24px; margin: 44px 0 12px; scroll-margin-top: 80px; }
 .doc h3 { font-size: 18px; margin: 26px 0 8px; }
 .doc p, .doc li { color: #c9cedb; }
-.doc li + li { margin-top: 6px; }
+/* Prose spacing only: unclassed lists. Styled lists (.toc pills, .steps cards) lay out with gap. */
+.doc :is(ul, ol):not([class]) > li + li { margin-top: 6px; }
 .doc a { color: #7fb0ff; }
 .doc .updated { color: var(--dim); margin: 0 0 28px; font-size: 15px; }
 .doc .intro { font-size: 19px; color: var(--text); }
@@ -631,8 +632,9 @@ html:not(.js) .toggle, html:not(.js) .routing-note { display: none; }
 .callout { padding: 20px 22px; border-radius: 16px; background: color-mix(in srgb, var(--c, var(--green)) 9%, var(--surface)); border: 1px solid color-mix(in srgb, var(--c, var(--green)) 35%, transparent); margin: 24px 0; }
 .callout p { margin: 0; color: var(--text); }
 .callout ul { margin: 10px 0 0; padding-left: 20px; }
-.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; padding: 0; list-style: none; }
-.toc a { display: inline-block; text-decoration: none; color: var(--muted); padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line-2); font-size: 14px; }
+.toc { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 12px; padding: 0; list-style: none; }
+.toc li { display: flex; margin: 0; }
+.toc a { display: inline-flex; align-items: center; margin: 0; line-height: 1.2; text-decoration: none; color: var(--muted); padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line-2); font-size: 14px; }
 .toc a:hover { color: var(--text); }
 
 .contact-card { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; padding: 26px; border-radius: 22px; margin: 28px 0 8px; }
