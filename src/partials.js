@@ -34,37 +34,37 @@ export const ICONS = {
   mail2: svg('0 0 20 20', '<rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 5.5l7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>'),
 };
 
-const navLinks = (home) => {
-  const p = home ? '' : '/';
-  return `<a href="${p}#demo">Demo</a><a href="${p}#features">Features</a><a href="${p}#privacy">Privacy</a><a href="/support/">Support</a>`;
+const navLinks = (home, root) => {
+  const p = home ? '' : root;
+  return `<a href="${p}#demo">Demo</a><a href="${p}#features">Features</a><a href="${p}#privacy">Privacy</a><a href="${root}support/">Support</a>`;
 };
 
-function nav(home) {
+function nav(home, root) {
   return `<a class="skip" href="#main">Skip to content</a>
 <nav class="nav" aria-label="Main"><div class="wrap nav-in">
-  <a class="brand" href="/" aria-label="ScreenSort home"><img src="/img/screensort-icon-128.png" width="30" height="30" alt="">ScreenSort</a>
-  <div class="nav-links">${navLinks(home)}<a class="nav-cta" href="${SITE.DOWNLOAD_URL}">${ICONS.download}Download</a></div>
+  <a class="brand" href="${root}" aria-label="ScreenSort home"><img src="${root}img/screensort-icon-128.png" width="30" height="30" alt="">ScreenSort</a>
+  <div class="nav-links">${navLinks(home, root)}<a class="nav-cta" href="${root}${SITE.DOWNLOAD_URL}">${ICONS.download}Download</a></div>
 </div></nav>`;
 }
 
-const footer = () => `<footer class="footer"><div class="wrap footer-in">
+const footer = (root) => `<footer class="footer"><div class="wrap footer-in">
   <div class="footer-brand">
-    <a class="brand" href="/" aria-label="ScreenSort home"><img src="/img/screensort-icon-128.png" width="34" height="34" alt="" loading="lazy">ScreenSort</a>
+    <a class="brand" href="${root}" aria-label="ScreenSort home"><img src="${root}img/screensort-icon-128.png" width="34" height="34" alt="" loading="lazy">ScreenSort</a>
     <p>Screenshots, named and sorted automatically. 100% on-device.</p>
     <p class="footer-fine">&copy; ${SITE.YEAR} ${SITE.LEGAL_ENTITY}. Mac, macOS, Apple Intelligence and Mac App Store are trademarks of Apple Inc.</p>
   </div>
   <nav class="footer-links" aria-label="Product">
-    <h2>Product</h2><a href="/#features">Features</a><a href="/#gallery">Screenshots</a><a href="${SITE.DOWNLOAD_URL}">Download</a><a href="/#mac-app-store">Mac App Store</a>
+    <h2>Product</h2><a href="${root}#features">Features</a><a href="${root}#gallery">Screenshots</a><a href="${root}${SITE.DOWNLOAD_URL}">Download</a><a href="${root}#mac-app-store">Mac App Store</a>
   </nav>
   <nav class="footer-links" aria-label="Help and legal">
-    <h2>Help</h2><a href="/support/">Support</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a><a href="mailto:${SITE.APP_SUPPORT_EMAIL}">${SITE.APP_SUPPORT_EMAIL}</a><a href="mailto:${SITE.SUPPORT_EMAIL}">${SITE.SUPPORT_EMAIL}</a>
+    <h2>Help</h2><a href="${root}support/">Support</a><a href="${root}privacy/">Privacy Policy</a><a href="${root}terms/">Terms of Use</a><a href="mailto:${SITE.APP_SUPPORT_EMAIL}">${SITE.APP_SUPPORT_EMAIL}</a><a href="mailto:${SITE.SUPPORT_EMAIL}">${SITE.SUPPORT_EMAIL}</a>
   </nav>
 </div></footer>`;
 
-const head = () => `<meta name="theme-color" content="#0B0D13">
+const head = (root) => `<meta name="theme-color" content="#0B0D13">
   <meta name="color-scheme" content="dark">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">`;
+  <link rel="icon" type="image/png" sizes="32x32" href="${root}favicon-32.png">
+  <link rel="apple-touch-icon" href="${root}apple-touch-icon.png">`;
 
 // ---- Hero demo -------------------------------------------------------------
 
@@ -102,7 +102,7 @@ const DOCK = [
   ['Slack', 'hash', 'violet'], ['Mail', 'mail', 'blue'], ['Messages', 'bubble', 'green'], ['Finder', 'finder', 'slate'],
 ];
 
-function demo() {
+function demo(root) {
   const s = SAMPLES[0];
   const chips = SAMPLES.map((x, i) => {
     const f = folderById(x.folder);
@@ -119,7 +119,7 @@ function demo() {
     </div>
   </div>
   <div class="recent" id="recent-renames" data-recent hidden>
-    <div class="recent-head"><img src="/img/screensort-icon-128.png" width="18" height="18" alt=""><b>Recent Renames</b><span class="recent-count" data-recent-count></span></div>
+    <div class="recent-head"><img src="${root}img/screensort-icon-128.png" width="18" height="18" alt=""><b>Recent Renames</b><span class="recent-count" data-recent-count></span></div>
     <ol class="recent-list" data-recent-list><li class="recent-empty">Captures you take in this demo show up here.</li></ol>
     <div class="recent-foot"><span>Launch at Login</span><span class="switch on" aria-hidden="true"></span></div>
   </div>
@@ -156,13 +156,13 @@ export const SLIDES = [
   ['mas-5-on-device-private', '100% On-Device Privacy', 'Apple Intelligence and Vision OCR run locally. Nothing leaves your Mac.'],
 ];
 
-function gallery() {
+function gallery(root) {
   const tabs = SLIDES.map(([id, title], i) =>
     `<button type="button" role="tab" id="g-tab-${i}" aria-controls="g-panel-${i}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-g-tab="${i}"><span class="g-num">0${i + 1}</span>${esc(title)}</button>`).join('');
   const panels = SLIDES.map(([id, title, caption], i) =>
     `<figure class="g-panel${i === 0 ? ' is-active' : ''}" role="tabpanel" id="g-panel-${i}" aria-labelledby="g-tab-${i}" data-g-panel="${i}">
       <button type="button" class="g-zoom" data-g-zoom="${i}" aria-label="Zoom: ${esc(title)}">
-        <img src="/img/${id}-1440.png" srcset="/img/${id}-1440.png 1440w, /img/${id}.png 2880w" sizes="(min-width: 1180px) 1100px, 94vw" width="2880" height="1800" alt="${esc(title)}: ${esc(caption)}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">
+        <img src="${root}img/${id}-1440.png" srcset="${root}img/${id}-1440.png 1440w, ${root}img/${id}.png 2880w" sizes="(min-width: 1180px) 1100px, 94vw" width="2880" height="1800" alt="${esc(title)}: ${esc(caption)}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">
         <span class="g-zoom-hint">${ICONS.zoom}Click to zoom</span>
       </button>
       <figcaption><b>${esc(title)}.</b> ${esc(caption)}</figcaption>
@@ -203,8 +203,8 @@ const folders = () => `<div class="folders" data-folders>${FOLDERS.map((f) => `<
 
 export const PARTIALS = {
   head,
-  'nav-home': () => nav(true),
-  nav: () => nav(false),
+  'nav-home': (root) => nav(true, root),
+  nav: (root) => nav(false, root),
   footer,
   demo,
   gallery,
@@ -212,13 +212,16 @@ export const PARTIALS = {
 };
 
 // Expands partials first (they may contain {{KEY}}), then config keys.
-export function renderHtml(html) {
+// root is the page-relative path to the site root ('./' or '../'), exposed as
+// {{ROOT}}, so every internal link works under a subpath like /screensort-site/.
+export function renderHtml(html, root = './') {
   return html
     .replace(/<!--\s*@partial\s+([\w-]+)\s*-->/g, (m, name) => {
       if (!PARTIALS[name]) throw new Error(`Unknown partial: ${name}`);
-      return PARTIALS[name]();
+      return PARTIALS[name](root);
     })
     .replace(/\{\{\s*(\w+)\s*\}\}/g, (m, key) => {
+      if (key === 'ROOT') return root;
       if (!(key in SITE)) throw new Error(`Unknown site config key: ${key}`);
       return String(SITE[key]);
     });
