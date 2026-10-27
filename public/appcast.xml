@@ -7,7 +7,7 @@
     <language>en</language>
     <item>
       <title>ScreenSort 1.0</title>
-      <pubDate>Tue, 27 Oct 2026 17:39:00 -0500</pubDate>
+      <pubDate>Tue, 27 Oct 2026 17:55:00 -0500</pubDate>
       <sparkle:version>1</sparkle:version>
       <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
@@ -22,8 +22,8 @@
       <enclosure
         url="https://screensort.app/download/ScreenSort-1.0.dmg"
         type="application/octet-stream"
-        sparkle:edSignature="8Y0YycKl3AzToKBDqUB575yfAP1EP8yJX484BrExMGs6ZyZ7RPF4sebW638NxHyPlkKEwQ5MXh3JKX5+IKVYCA=="
-        length="4366443"/>
+        sparkle:edSignature="8PGnLJe9mtobdhAIjl+9vnJ4qxL7kj86V4K2OlvTxzSrowrQ398VPEUOkghKi/H+uNN9WxifXUVLXd6j5CVoAA=="
+        length="4372714"/>
     </item>
   </channel>
 </rss>
