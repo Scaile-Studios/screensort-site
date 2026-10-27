@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>ScreenSort</title>
+    <link>https://screensort.app/appcast.xml</link>
+    <description>Updates for ScreenSort, the on-device screenshot organizer and namer for macOS.</description>
+    <language>en</language>
+    <item>
+      <title>ScreenSort 1.0</title>
+      <pubDate>Tue, 27 Oct 2026 17:22:00 -0500</pubDate>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <ul>
+          <li>Initial release of ScreenSort for macOS.</li>
+          <li>Watches your screenshot folder and automatically renames new screenshots using on-device Vision and Apple Intelligence.</li>
+          <li>Routes screenshots into category subfolders with one-click Undo, Quick Look, and drag-to-attach from the post-rename notification and menu bar list.</li>
+          <li>Automatic updates powered by Sparkle 2.</li>
+        </ul>
+      ]]></description>
+      <enclosure
+        url="https://screensort.app/download/ScreenSort-1.0.dmg"
+        type="application/octet-stream"
+        sparkle:edSignature="zJG3HaY541bkStpIqW3cxo/RgbH1Hnny55CJH/ZKXHHvx244e0pUyQNmdWEpIIe/4TIHWFW/pDqpCdrXVErRDg=="
+        length="4105211"/>
+    </item>
+  </channel>
+</rss>
