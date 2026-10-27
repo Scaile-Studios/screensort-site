@@ -2,6 +2,7 @@ import './styles/main.css';
 import './email.js';
 import { initDemo } from './demo.js';
 import { initGallery } from './gallery.js';
+import { initBuy } from './buy.js';
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -11,6 +12,8 @@ const demoApi = demo && initDemo(demo, { reduced });
 const gallery = document.querySelector('[data-gallery]');
 const lightbox = document.querySelector('[data-lightbox]');
 if (gallery && lightbox) initGallery(gallery, lightbox);
+
+document.querySelectorAll('[data-buy]').forEach(initBuy);
 
 // Smart folders: the optional routing toggle.
 const routing = document.querySelector('[data-routing-input]');

@@ -24,11 +24,12 @@ npm run check:dashes
 ## Where things live
 
 - `index.html`, `privacy/`, `terms/`, `support/`: the pages, registered in `vite.config.js`. `<!-- @partial name -->` and `{{KEY}}` are expanded at build time by the small plugin in `vite.config.js`, so shipped HTML is complete without JS. Internal links and assets are page-relative (`base: './'` plus a per-page `{{ROOT}}` of `./` or `../`), so `dist/` works at `/` (screensort.app) and under a subpath (`/screensort-site/` on GitHub Pages).
-- `src/site.config.js`: values that change between releases (download URL and badge, Mac App Store link and status, requirements, support email (rendered obfuscated via the email partials), legal entity and effective date). Change them there only.
+- `src/site.config.js`: values that change between releases (download URL and badge, Mac App Store link and status, requirements, pricing labels and Paddle checkout IDs, support email (kept in two parts and rendered obfuscated via the email partials), legal entity and effective date). Change them there only.
 - `src/partials.js`: shared markup (head tags, nav, footer, the hero demo first frame, the gallery, the smart folders grid) and the SVG icons.
 - `src/samples.js`: the four sample captures and six category folders used by the hero demo, shared by the build and the client.
 - `src/demo.js`: the live banner demo (capture animation, filename morph, inline rename, folder menu, drag and drop, Quick Look, Undo, auto-dismiss timer, Recent Renames).
 - `src/gallery.js`: the 5-slide screenshot gallery and lightbox.
+- `src/buy.js`: the Buy License buttons (`[data-buy]`). Opens Paddle overlay checkout once `PADDLE_CLIENT_TOKEN` and `PADDLE_PRICE_ID` are set in `src/site.config.js`; until then it shows a note pointing to the free trial and the Mac App Store.
 - `src/styles/main.css`: all styles.
 - `public/img/mas-*.png`: the 2880x1800 App Store slides, plus `-1440` copies (made with `sips -Z 1440`) served to 1x screens through `srcset`.
 - `public/favicon-32.png`, `public/apple-touch-icon.png`: made from `public/img/screensort-icon-squircle.png` with `sips -z`.

@@ -19,6 +19,19 @@ export function revealEmails(root = document) {
   });
 }
 
+// A support link built in the browser, for notes written by client code (src/buy.js).
+export function emailLink(user, domain) {
+  const a = document.createElement('a');
+  a.className = 'js-obfuscated-email';
+  a.dataset.u = btoa(user);
+  a.dataset.d = btoa(domain);
+  a.href = '#';
+  const box = document.createElement('span');
+  box.append(a);
+  revealEmails(box);
+  return a;
+}
+
 // Module scripts run after parsing, but cover the DOMContentLoaded path as well.
 revealEmails();
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => revealEmails());

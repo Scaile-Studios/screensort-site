@@ -36,7 +36,7 @@ export const ICONS = {
 
 const navLinks = (home, root) => {
   const p = home ? '' : root;
-  return `<a href="${p}#demo">Demo</a><a href="${p}#features">Features</a><a href="${p}#privacy">Privacy</a><a href="${root}support/">Support</a>`;
+  return `<a href="${p}#demo">Demo</a><a href="${p}#features">Features</a><a href="${p}#privacy">Privacy</a><a href="${p}#pricing">Pricing</a><a href="${root}support/">Support</a>`;
 };
 
 function nav(home, root) {
@@ -52,10 +52,9 @@ function nav(home, root) {
 // the address and href at runtime; data-keep-label keeps a custom label such as a
 // button's. Without JS the link falls back to the support page's contact card.
 const b64 = (s) => Buffer.from(s).toString('base64');
-const [EMAIL_USER, EMAIL_DOMAIN] = SITE.SUPPORT_EMAIL.split('@');
 
 function email(root, { label = 'Contact Support', cls = '', subject = '', keepLabel = false } = {}) {
-  return `<a class="js-obfuscated-email${cls ? ` ${cls}` : ''}" data-u="${b64(EMAIL_USER)}" data-d="${b64(EMAIL_DOMAIN)}"${subject ? ` data-subject="${esc(subject)}"` : ''}${keepLabel ? ' data-keep-label' : ''} href="${root}support/#contact">${label}</a>`;
+  return `<a class="js-obfuscated-email${cls ? ` ${cls}` : ''}" data-u="${b64(SITE.SUPPORT_USER)}" data-d="${b64(SITE.SUPPORT_DOMAIN)}"${subject ? ` data-subject="${esc(subject)}"` : ''}${keepLabel ? ' data-keep-label' : ''} href="${root}support/#contact">${label}</a>`;
 }
 
 const footer = (root) => `<footer class="footer"><div class="wrap footer-in">
@@ -65,10 +64,10 @@ const footer = (root) => `<footer class="footer"><div class="wrap footer-in">
     <p class="footer-fine">&copy; ${SITE.YEAR} ${SITE.LEGAL_ENTITY}. Mac, macOS, Apple Intelligence and Mac App Store are trademarks of Apple Inc.</p>
   </div>
   <nav class="footer-links" aria-label="Product">
-    <h2>Product</h2><a href="${root}#features">Features</a><a href="${root}#gallery">Screenshots</a><a href="${root}${SITE.DOWNLOAD_URL}">Download</a><a href="${SITE.MAS_URL}">Mac App Store</a>
+    <h2>Product</h2><a href="${root}#features">Features</a><a href="${root}#gallery">Screenshots</a><a href="${root}#pricing">Pricing</a><a href="${root}${SITE.DOWNLOAD_URL}">Download</a><a href="${SITE.MAS_URL}">Mac App Store</a>
   </nav>
   <nav class="footer-links" aria-label="Help and legal">
-    <h2>Help</h2><a href="${root}support/">Support</a><a href="${root}privacy/">Privacy Policy</a><a href="${root}terms/">Terms of Use</a>${email(root)}
+    <h2>Help</h2><a href="${root}support/">Support</a><a href="${root}privacy/">Privacy Policy</a><a href="${root}terms/">Terms of Use</a><a href="${root}terms/#refunds">Refund Policy</a>${email(root)}
   </nav>
 </div></footer>`;
 
@@ -235,7 +234,7 @@ export function renderHtml(html, root = './') {
     })
     .replace(/\{\{\s*(\w+)\s*\}\}/g, (m, key) => {
       if (key === 'ROOT') return root;
-      if (key === 'SUPPORT_EMAIL') throw new Error('Use <!-- @partial email --> instead of {{SUPPORT_EMAIL}}');
+      if (/^SUPPORT_(EMAIL|USER|DOMAIN)$/.test(key)) throw new Error('Use <!-- @partial email --> instead of {{SUPPORT_EMAIL}}');
       if (!(key in SITE)) throw new Error(`Unknown site config key: ${key}`);
       return String(SITE[key]);
     });

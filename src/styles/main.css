@@ -600,6 +600,15 @@ html:not(.js) .toggle, html:not(.js) .routing-note { display: none; }
 .get-card { text-align: center; padding: 56px 28px; background: radial-gradient(80% 120% at 50% 0%, rgba(59, 130, 246, 0.18), transparent 70%), var(--glass); }
 .get-card img { margin: 0 auto 18px; width: 112px; height: 112px; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.5)); }
 .get-card .lede { max-width: 620px; margin-inline: auto; }
+.get-card .eyebrow { margin-bottom: 8px; }
+.price { display: flex; align-items: baseline; justify-content: center; gap: 10px; margin: 14px 0 0; }
+.price b { font-size: clamp(44px, 6vw, 60px); font-weight: 750; letter-spacing: -0.04em; line-height: 1; }
+.price span { color: var(--muted); font-size: 17px; }
+.perks { max-width: 520px; margin: 26px auto 0; text-align: left; }
+.buy-note { max-width: 620px; margin: 16px auto 0; color: var(--text); font-size: 15px; }
+.buy-note:empty { display: none; }
+.buy-note a { color: #7fb0ff; }
+.anchor { position: absolute; top: 0; }
 
 /* ---- Footer ------------------------------------------------------------- */
 
