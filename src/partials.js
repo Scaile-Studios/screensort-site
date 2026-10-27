@@ -57,7 +57,7 @@ const footer = () => `<footer class="footer"><div class="wrap footer-in">
     <h2>Product</h2><a href="/#features">Features</a><a href="/#gallery">Screenshots</a><a href="${SITE.DOWNLOAD_URL}">Download</a><a href="/#mac-app-store">Mac App Store</a>
   </nav>
   <nav class="footer-links" aria-label="Help and legal">
-    <h2>Help</h2><a href="/support/">Support</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a><a href="mailto:${SITE.SUPPORT_EMAIL}">${SITE.SUPPORT_EMAIL}</a>
+    <h2>Help</h2><a href="/support/">Support</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a><a href="mailto:${SITE.APP_SUPPORT_EMAIL}">${SITE.APP_SUPPORT_EMAIL}</a><a href="mailto:${SITE.SUPPORT_EMAIL}">${SITE.SUPPORT_EMAIL}</a>
   </nav>
 </div></footer>`;
 

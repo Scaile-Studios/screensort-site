@@ -5,9 +5,9 @@ import { join, extname } from 'node:path';
 
 const ROOTS = [
   'index.html', 'privacy', 'terms', 'support', 'src', 'scripts', 'public', 'README.md',
-  'vite.config.js', 'vercel.json', 'wrangler.toml', 'package.json', '.gitignore',
+  'vite.config.js', 'vercel.json', 'wrangler.toml', 'package.json', '.gitignore', '.github',
 ];
-const TEXT = new Set(['.html', '.js', '.mjs', '.css', '.md', '.txt', '.json', '.xml', '.toml', '.svg', '']);
+const TEXT = new Set(['.html', '.js', '.mjs', '.css', '.md', '.txt', '.json', '.xml', '.toml', '.svg', '.yml', '.yaml', '']);
 const DASHES = [[0x2014, 'em dash'], [0x2013, 'en dash']].map(([code, name]) => [String.fromCharCode(code), name]);
 const bad = [];
 

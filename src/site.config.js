@@ -16,7 +16,9 @@ export const SITE = {
 
   REQUIREMENTS: 'macOS 26 or later',
 
-  // Support and legal.
+  // Support and legal. Both addresses are listed on /privacy, /terms and /support:
+  // the product address first, the studio address as an alternate.
+  APP_SUPPORT_EMAIL: 'support@screensort.app',
   SUPPORT_EMAIL: 'support@scailestudios.com',
   SUPPORT_RESPONSE: 'within 2 business days',
   LEGAL_ENTITY: 'Scaile Studios LLC',
