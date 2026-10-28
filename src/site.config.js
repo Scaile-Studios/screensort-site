@@ -12,7 +12,7 @@ export const SITE = {
 
   // Mac App Store listing. An absolute URL, so pages use it as is (no {{ROOT}} prefix).
   MAS_URL: 'https://apps.apple.com/us/app/screensort-auto-screenshot/id6827754596?mt=12',
-  MAS_STATUS: 'macOS 15+ - Sandboxed',
+  MAS_STATUS: 'v1.0 - macOS 26+',
 
   REQUIREMENTS: 'macOS 26 or later',
 
